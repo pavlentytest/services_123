@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,17 +12,14 @@ class MainActivity : AppCompatActivity() {
         when (view.id) {
 
             R.id.button1 -> {
-                val nextActivity = Intent(this, UnboundedActivity::class.java)
+                val nextActivity = Intent(this, BackgroundActivity::class.java)
                 startActivity(nextActivity)
             }
             R.id.button2 -> {
                 val nextActivity = Intent(this, BoundedActivity::class.java)
                 startActivity(nextActivity)
             }
-            R.id.button4 -> {
-                val nextActivity = Intent(this, ForegroundActivity::class.java)
-                startActivity(nextActivity)
-            }
+
         }
     }
 
@@ -35,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button1).setOnClickListener(clickListener)
         findViewById<Button>(R.id.button2).setOnClickListener(clickListener)
-        findViewById<Button>(R.id.button4).setOnClickListener(clickListener)
 
     }
 }

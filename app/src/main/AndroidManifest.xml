@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,15 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-        <service
-            android:name=".ForegroundService"
-            android:enabled="true"
-            android:exported="true" android:foregroundServiceType="mediaPlayback" />
-
-
-        <activity
-            android:name=".ForegroundActivity"
-            android:exported="false" />
 
         <service
             android:name=".BoundService"
@@ -35,12 +23,12 @@
             android:exported="false" />
 
         <service
-            android:name=".UnboundedService"
+            android:name=".BackgroundService"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".UnboundedActivity"
+            android:name=".BackgroundActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
